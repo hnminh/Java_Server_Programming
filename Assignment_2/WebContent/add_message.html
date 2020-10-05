@@ -1,0 +1,45 @@
+<!--This is the HTML form -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Message</title>
+</head>
+
+<body>
+	<h1>Add Message</h1>
+	<form action="add_message_servlet" method="POST">
+		<table>
+			<tr>
+				<td>User Name</td>
+				<td><input type="text" size="40" name="userName" required></td>
+			</tr>
+			<tr>
+				<td>Message</td>
+				<td><textarea name="message" rows="4" cols="40" required></textarea></td>
+			</tr>
+			<tr>
+				<td>Favorite sports</td>
+				<td></td>
+				<td><input type='checkbox' name='sportOptions' value='tennis'>Tennis</td>
+				<td><input type='checkbox' name='sportOptions' value='golf'>Golf</td>
+				<td><input type='checkbox' name='sportOptions' value='football'>Football</td>
+				<td><input type='checkbox' name='sportOptions' value='karate'>Karate</td>
+				<td><input type='checkbox' name='sportOptions' value='swimming'>Swimming</td>
+			</tr>
+			<tr>
+				<td>Favorite views</td>
+				<td></td>
+				<td><input type='checkbox' name='viewOptions' value='sunrise'>Sunrise</td>
+				<td><input type='checkbox' name='viewOptions' value='sunset'>Sunset</td>
+				<td><input type='checkbox' name='viewOptions' value='bluesea'>Blue sea</td>
+				<td><input type='checkbox' name='viewOptions' value='mountain'>Mountain</td>
+				<td><input type='checkbox' name='viewOptions' value='grassland'>Grassland</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" VALUE="Add"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

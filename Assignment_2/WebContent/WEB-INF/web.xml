@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+
+	<display-name>ForumServlet</display-name>
+	<description> 
+      Servlet Demos. 
+    </description>
+	<!-- Define servlets that are included in the example application -->
+	
+	<welcome-file-list>
+		<welcome-file>login.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<!--Here we declare servlet's registered name -->
+		<servlet-name>AddMessageServlet</servlet-name>
+		<servlet-class>servlet.AddMessageServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<!--Here we declare servlet's registered name -->
+		<servlet-name>ForumServlet</servlet-name>
+		<servlet-class>servlet.ForumServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<!--Here we declare servlet's registered name -->
+		<servlet-name>FindByNameServlet</servlet-name>
+		<servlet-class>servlet.FindByNameServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<!--Here we declare servlet's registered name -->
+		<servlet-name>FindByDateServlet</servlet-name>
+		<servlet-class>servlet.FindByDateServlet</servlet-class>
+	</servlet>
+
+	<!--Here we say that the Servlets can be invoked by writing the path 
+		and login to the address bar of the browser -->
+
+	<servlet-mapping>
+		<servlet-name>AddMessageServlet</servlet-name>
+		<url-pattern>/add_message_servlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ForumServlet</servlet-name>
+		<url-pattern>/forum_servlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>FindByNameServlet</servlet-name>
+		<url-pattern>/findby_name_servlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>FindByDateServlet</servlet-name>
+		<url-pattern>/findby_date_servlet</url-pattern>
+	</servlet-mapping>
+</web-app>
