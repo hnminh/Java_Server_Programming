@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>upload_path</param-name>
+		<param-value>upload/public/files</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>data_file</param-name>
+		<param-value>data.txt</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>sub_dir_name</param-name>
+		<param-value>data</param-value>
+	</context-param>
+	
+	<servlet>
+		<servlet-name>AddMessageServlet</servlet-name>
+		<servlet-class>servlet.AddMessageServlet</servlet-class>
+		<multipart-config>
+			<max-file-size>10485760</max-file-size>
+			<max-request-size>20971520</max-request-size>
+			<file-size-threshold>5242880</file-size-threshold>
+		</multipart-config>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ForumServlet</servlet-name>
+		<servlet-class>servlet.ForumServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>FindByNameServlet</servlet-name>
+		<servlet-class>servlet.FindByNameServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AddMessageServlet</servlet-name>
+		<url-pattern>/add_message_servlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ForumServlet</servlet-name>
+		<url-pattern>/index.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>FindByNameServlet</servlet-name>
+		<url-pattern>/findby_name_servlet</url-pattern>
+	</servlet-mapping>
+
+</web-app>
