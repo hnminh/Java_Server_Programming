@@ -1,0 +1,38 @@
+<!--This is the HTML form -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Message</title>
+</head>
+
+<body>
+	<h1>Add Message</h1>
+	<form action="add_message_servlet" method="POST" enctype="multipart/form-data">
+		<table>
+			<tr>
+				<td>User Name</td>
+				<td><input type="text" size="40" name="userName" required></td>
+			</tr>
+			<tr>
+				<td>Message</td>
+				<td><textarea name="message" required></textarea></td>
+			</tr>
+			<tr>
+				<td>Select an image to upload</td>
+				<td><input type="file" name="fileName" multiple onchange="checkFiles(this.files)"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" VALUE="Add"></td>
+			</tr>
+		</table>
+	</form>
+	<script>
+		function checkFiles(files) {       
+			if(files.length > 3) {
+				alert("You are only allowed to upload a maximum of 3 files");
+			}       
+		}
+	</script>
+</body>
+</html>

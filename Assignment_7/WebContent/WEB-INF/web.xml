@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+	<description>Forum Application</description>
+
+	<!-- Define a security constraint on this application -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Entire Application</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	
+	<servlet>
+		<servlet-name>RoleOptionServlet</servlet-name>
+		<servlet-class>servlet.RoleOptionServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>RoleOptionServlet</servlet-name>
+		<url-pattern>/index.html</url-pattern>
+	</servlet-mapping>
+
+</web-app>
